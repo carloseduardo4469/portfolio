@@ -1,12 +1,12 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
 :root{
-    --background: #000000;
+    --background: #ffffff;
     --fonte: "FreightNeo W03 Bold";
     --fonte-p: "Poppins", sans-serif;
-    --cor-fonte1: #ffffff;
-    --cor-fonte2: #C0C6CC;
-    --cor-fonte3: #b74b4b;
+    --cor-fonte1: #000000;
+    --cor-fonte2: #141414;
+    --cor-fonte3: #4bb76d;
 }
 *{
     margin: 0;
@@ -117,7 +117,7 @@ span{
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    background-color: var(--cor-fonte1);
+    background-color: var(--background);
 }
 
 .social-icons a:hover{
