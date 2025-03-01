@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 900px) {
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
     
@@ -27,7 +27,7 @@ nav a:hover, nav.ativo{
 }
 .home{
     flex-direction: column;
-    margin: 5rem 4rem;
+    
 }
 .home .home-content h2{
     font-size: 2.5rem;
@@ -36,12 +36,83 @@ nav a:hover, nav.ativo{
     font-size: 5rem;
 }
 .home-img img{
-    width: 70vw;
+    width: 100vw;
     margin-top: 4rem ;
 }
-@media screen and (max-width: 1000px) {
-    .home{
-        gap: 4rem;
+.icons{
+    display: flex;
+    flex-direction: row;
+    
+}
+.social-icons{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-services {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.content-servevices{
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Espaço entre o título e os cards */
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 colunas */
+    grid-template-rows: repeat(2, auto); /* 2 linhas */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-service {
+    background: var(--background);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: var(--cor-fonte2);
+    border: 2px solid var(--cor-fonte3);
+    font-size: 1.6rem;
+}
+
+.card-service:hover {
+    transform: scale(1.05);
+    background-color: var(--cor-fonte3);
+    color: var(--background);
+    box-shadow: 0 0 25px var(--cor-fonte3);
+}
+
+.card-service i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.card-service h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+}
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     }
 }
+
+@media (max-width: 480px) {
+    .skills {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+    .services {
+        grid-template-columns: repeat(1, 1fr); /* 1 coluna para telas menores */
+    }
 }

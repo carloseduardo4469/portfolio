@@ -4,22 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfolio</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="estilos/style.css" media="screen">
     <link rel="stylesheet" href="estilos/media-queries.css" media="screen">
     <link href="https://db.onlinewebfonts.com/c/a825694f9c5941d2d47f33194f8653a8?family=FreightNeo+W03+Bold" rel="stylesheet" type="text/css"/>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background-light: #ffffff;
+            --background-dark: #272727;
+            --text-light: #000000;
+            --text-dark: #ffffff;
+            --highlight: #4bb76d;
+        }
+
+        body {
+            background: url('imagens/fundo.jpg') no-repeat center center fixed;
+            color: var(--text-light);
+            transition: 0.3s;
+        }
+
+        .dark-mode {
+            background: var(--background-dark);
+            color: var(--text-dark);
+        }
+
+        header, main, section, nav, footer {
+            transition: 0.3s;
+        }
+
+        .dark-mode header, 
+        .dark-mode main, 
+        .dark-mode section, 
+        .dark-mode nav, 
+        .dark-mode footer {
+            background: var(--background-dark);
+            color: var(--text-dark);
+        }
+
+        nav a {
+            color: var(--text-light);
+            transition: 0.3s;
+        }
+
+        .dark-mode nav a {
+            color: var(--text-dark);
+        }
+
+        .theme-toggle {
+            background: var(--highlight);
+            color: white;
+            border: none;
+            padding: 3px;
+            margin-left: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        .theme-toggle:hover {
+            background: #3a9b5a;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="#" class="logo">Cadu</a>
+        
         <nav>
             <a href="#" class="ativo">Home</a>
-            <a href="#">Serviços</a>
-            <a href="#">Habilidades</a>
-            <a href="#">Conhecimentos</a>
+            <a href="#services">Serviços</a>
+            <a href="#skills">Habilidades</a>
             <a href="#">Experiencia</a>
-            <a href="#">Contato</a>
+            
         </nav>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i> / <i class="fas fa-sun"></i>
+        </button>
     </header>
         <section class="home">
             <div class="home-img">
@@ -27,19 +106,102 @@
             </div>
         
             <div class="home-content">
-                <h1>&lt;&gt;Eu sou <span>Cadu</span>&lt;/&gt;</h1>
+                <h1><i class="fas fa-code"></i>Eu sou <span>Cadu</span><i class="fas fa-code"></i></h1>
                 <h2 class="typing-text">Eu sou <span></span></h2>
-                <p>Atualmente, estou cursando o ensino médio juntamente com o técnico em Desenvolvimento de Sistemas.</p>
+                <p>Atualmente, estou cursando o ensino médio juntamente com o técnico em Desenvolvimento de Sistemas na Etec.</p>
             
-                <div class="social-icons">
-                <a href="https://github.com/carloseduardo4469?tab=repositories" target="_blank" ><img src="imagens/github.png" alt=""></a>
-                <a href="https://www.instagram.com/c4du.eduardo/" target="_blank" ><img src="imagens/instagram.png" alt=""></a>
-                <a href="https://www.linkedin.com/in/carlos-eduardo-655769346/" target="_blank" ><img src="imagens/linkedin.png" alt=""></a>
+                <div class="icons">
+                    <div class="social-icons">
+                    <a href="https://github.com/carloseduardo4469?tab=repositories" target="_blank" ><img src="imagens/github.png" alt="" class="links"></a>
+                    <a href="https://www.instagram.com/c4du.eduardo/" target="_blank" ><img src="imagens/instagram.png" alt="" class="links"></a>
+                    <a href="https://www.linkedin.com/in/carlos-eduardo-655769346/" target="_blank" ><img src="imagens/linkedin.png" alt="" class="links"></a>
+                    </div>
+                    <a href="#" class="btn">Download CV <i class="fa fa-download"></i></a>
                 </div>
-                <a href="#" class="btn">Me contrate</a>
+                
         </div>
         </section>
-    
+    <main>
+        <section class="container-services">
+            <div class="content-services">
+                <div class="section-title">
+                    <h2>Serviços</h2>
+                </div>  
+                
+                <div class="services" id="services">
+                    <div class="card-service">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Design</h3>
+                        <p>Desenvolvimento de interfaces gráficas para sites e aplicativos.</p>
+                    </div>
+
+                    <div class="card-service">
+                        <i class="fas fa-code"></i>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Desenvolvimento de sites e aplicativos web.</p>
+                    </div>
+                    <div class="card-service">
+                        <i class="fas fa-code"></i>
+                        <h3>Desenvolvimento Software</h3>
+                        <p>Desenvolvimento de aplicações</p>
+                    </div>
+
+                    <div class="card-service">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Desenvolvimento Mobile</h3>
+                        <p>Desenvolvimento de aplicativos mobile.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container-skills">
+            <div class="content-skills">
+                <div class="section-title">
+                    <h2>Habilidades</h2>
+                </div>  
+                <div class="skills">
+
+                    <div class="card-skill" id="skills">
+                        <i class="fab fa-html5" aria-hidden="true"></i>
+                        <h3>HTML</h3>
+                        <p>Estruturação semântica</p>
+                    </div>
+
+                    <div class="card-skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                        <p>Layouts responsivos</p>
+                    </div>
+
+                    <div class="card-skill">
+                        <i class="fab fa-js-square"></i>
+                        <h3>JavaScript</h3>
+                        <p>Interatividade & DOM</p>
+                    </div>
+
+                    <div class="card-skill">
+                        <i class="fas fa fa-database"></i>
+                        <h3>MariaDB</h3>
+                        <p>Banco de Dados</p>
+                    </div>
+
+                    <div class="card-skill">
+                        <i class="fab fa-php"></i>
+                        <h3>PHP</h3>
+                        <p>Cliente / Servidor</p>
+                    </div>
+
+                    <div class="card-skill">
+                        <i class="fab fa-java"></i>
+                        <h3>JAVA</h3>
+                        <p>Aplicações ou back-end</p>
+                    </div>
+
+                </div>        
+            </div>
+        </section>
+    </main>
             
 </body>
 </html>
