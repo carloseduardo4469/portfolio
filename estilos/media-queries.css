@@ -68,7 +68,7 @@ nav a:hover, nav.ativo{
 
 .services {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 colunas */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     grid-template-rows: repeat(2, auto); /* 2 linhas */
     gap: 20px;
     padding: 20px;
