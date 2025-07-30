@@ -278,19 +278,17 @@ span{
     }
 }
 @keyframes words{
-    0%, 20%{
-        content: "Web Developer";
+    0%, 30%{
+        content: "Desenvolvedor Web";
     }
-    21%, 40%{
-        content: "Software Developer";
+    31%, 50%{
+        content: "Desenvolvedor de Software";
     }
-    41%, 60%{
+    51%, 70%{
         content: "Web Designer";
     }
-    61%, 80%{
-        content: "Student";
+    71%, 100%{
+        content: "Estudante";
     }
-    81%, 100%{
-        content: "Script Writer";
-    }
+    
 }
